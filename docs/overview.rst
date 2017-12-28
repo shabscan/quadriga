@@ -17,7 +17,7 @@ used:
     )
 
     # Get the latest trading summary
-    client.get_summary()
+    client.get_ticker()
 
     # Get all public open orders
     client.get_public_orders()
@@ -26,13 +26,13 @@ used:
     client.get_public_trades()
 
     # Get the user's open orders
-    client.get_orders()
+    client.get_user_orders()
 
     # Get the user's completed trades
-    client.get_trades()
+    client.get_user_trades()
 
     # Get the user's account balance
-    client.get_balance()
+    client.get_account_balance()
 
     # Buy 10 bitcoins at the market price
     client.buy_market_order(10)

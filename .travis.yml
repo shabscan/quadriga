@@ -10,8 +10,10 @@ install:
     - pip install pytest
     - pip install pytest-cov
     - pip install python-coveralls
+    - pip install flake8
     - python setup.py install
 script:
+    - python -m flake8 quadriga
     - py.test tests.py --cov=quadriga
 after_success:
     - coveralls

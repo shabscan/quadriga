@@ -35,7 +35,7 @@ Here is an example showing how the logger can be enabled and customized:
     client.get_public_orders(book='eth_cad')
 
 
-The logging output for above would look something like this:
+The logging output from the above setup looks something like this:
 
 .. code-block:: console
 
@@ -46,7 +46,7 @@ The logging output for above would look something like this:
 In order to see the full request information, turn on logging for the requests_
 library which **quadriga** uses under the hood:
 
-.. _requests: https://github.com/kennethreitz/requests
+.. _requests: https://github.com/requests/requests
 
 .. code-block:: python
 

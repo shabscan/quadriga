@@ -2,11 +2,11 @@ from __future__ import absolute_import, unicode_literals
 
 
 class QuadrigaError(Exception):
-    """Base class for all Quadriga exceptions."""
+    """Base class for all **quadriga** exceptions."""
 
 
 class RequestError(QuadrigaError):
-    """Raised when there is an issue with sending requests to QuadrigaCX."""
+    """Raised when a request to QuadrigaCX fails."""
 
     def __init__(self, response, message, error_code=None):
         self.url = response.url
@@ -19,8 +19,16 @@ class RequestError(QuadrigaError):
 
 
 class InvalidCurrencyError(QuadrigaError):
-    """Raised when an invalid currency is specified."""
+    """Raised when an invalid currency is given."""
 
 
 class InvalidOrderBookError(QuadrigaError):
-    """Raised when an invalid order book name is specified."""
+    """Raised when an invalid order book name is given."""
+
+
+class InvalidTimeFrameError(QuadrigaError):
+    """Raised when an invalid time frame is given."""
+
+
+class InvalidSortMethodError(QuadrigaError):
+    """Raised when an invalid sorting method is given."""

@@ -1,20 +1,18 @@
 from setuptools import setup, find_packages
 
-version = {}
-with open('./quadriga/version.py') as fp:
-    exec(fp.read(), version)
+import quadriga
 
 setup(
     name='quadriga',
-    description='Python Wrapper for QuadrigaCX API v2',
-    version=version['VERSION'],
+    description='Unofficial Python Client for QuadrigaCX API',
+    version=quadriga.__version__,
     author='Joohwan Oh',
     author_email='joohwan.oh@outlook.com',
     url='https://github.com/joowani/quadriga',
     packages=find_packages(),
     license='MIT',
     install_requires=['requests'],
-    tests_require=['pytest', 'mock'],
+    tests_require=['pytest', 'mock', 'flake8'],
     classifiers=[
         'Intended Audience :: Developers',
         'Intended Audience :: End Users/Desktop',

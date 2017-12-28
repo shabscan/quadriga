@@ -29,22 +29,22 @@ Python Client for QuadrigaCX
 Introduction
 ============
 
-**Quadriga** is a Python client for QuadrigaCX_, a Canadian cryptocurrency
-exchange platform. It wraps `REST API v2`_ and facilitates the process of
-trading Bitcoin_, Ethereum_ and Litecoin_.
+**Quadriga** is an unofficial Python client for Canadian cryptocurrency
+exchange platform QuadrigaCX_. It wraps `REST API v2`_ using the `requests`_
+library.
 
 .. _QuadrigaCX: https://www.quadrigacx.com
 .. _REST API v2: https://www.quadrigacx.com/api_info
-.. _Bitcoin: https://bitcoin.org/
-.. _Ethereum: https://ethereum.org/
-.. _Litecoin: https://litecoin.org/
+.. _requests: https://github.com/requests/requests
 
 Requirements
 ============
 
-- Python 2.7.x, 3.4.x, 3.5.x or 3.6.x
+- Python 2.7, 3.4, 3.5 or 3.6
+- Pip_ installer
 - QuadrigaCX API secret, API key and client ID
 
+.. _Pip: https://pip.pypa.io/
 
 Installation
 ============
@@ -55,14 +55,13 @@ To install a stable version from PyPi_:
 
     ~$ pip install quadriga
 
-
 To install the latest version directly from GitHub_:
 
 .. code-block:: bash
 
     ~$ pip install -e git+git@github.com:joowani/quadriga.git@master#egg=quadriga
 
-Note: ``sudo`` may be required depending on the environment.
+You may need to use ``sudo`` depending on your environment.
 
 .. _PyPi: https://pypi.python.org/pypi/quadriga
 .. _GitHub: https://github.com/joowani/quadriga
@@ -86,7 +85,7 @@ Here are some usage examples:
     )
 
     # Get the latest trading summary
-    client.get_summary()
+    client.get_ticker()
 
     # Get all public open orders
     client.get_public_orders()
@@ -95,13 +94,13 @@ Here are some usage examples:
     client.get_public_trades()
 
     # Get the user's open orders
-    client.get_orders()
+    client.get_user_orders()
 
     # Get the user's completed trades
-    client.get_trades()
+    client.get_user_trades()
 
     # Get the user's account balance
-    client.get_balance()
+    client.get_account_balance()
 
     # Buy 10 bitcoins at the market price
     client.buy_market_order(10)
@@ -150,3 +149,21 @@ Please have a look at this page_ before submitting a pull request. Thanks!
     http://quadriga.readthedocs.io/en/master/index.html
 .. _page:
     http://quadriga.readthedocs.io/en/master/contributing.html
+
+Donation
+========
+
+If you found this library useful, feel free to donate!
+
+* **BTC**: 3QG2wSQnXNbGv1y88oHgLXtTabJwxfF8mU
+* **ETH**: 0x1f90a2a456420B38Bdb39086C17e61BF5C377dab
+* **ADA**:
+
+
+Disclaimer
+==========
+
+The author(s) of this project is in no way affiliated with QuadrigaCX, and
+shall not accept any liability, obligation or responsibility whatsoever for
+any cost, loss or damage arising from the use of this client. Please use at
+your own risk!

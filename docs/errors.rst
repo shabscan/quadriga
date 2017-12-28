@@ -1,10 +1,10 @@
 Error Handling
 --------------
 
-All exceptions designed to be raised by the **quadriga** client inherit from the
-base exception :class:`quadriga.exceptions.QuadrigaError`. When a request to
-QuadrigaCX fails, the client raises :class:`quadriga.exceptions.RequestError`
-which lightly wraps the HTTP response returned from the server.
+Exceptions raised by the **quadriga** client inherit from base exception
+:class:`quadriga.exceptions.QuadrigaError`. When a request to QuadrigaCX
+fails, the client raises :class:`quadriga.exceptions.RequestError` which
+wraps the HTTP response returned from the exchange.
 
 Here is an example showing how an exception can be caught and handled:
 
@@ -19,8 +19,8 @@ Here is an example showing how an exception can be caught and handled:
         default_book='btc_usd'
     )
     try:
-        # This line should fail due to invalid book
-        client.get_summary('invalid_book')
+        # This line should fail due to invalid order book
+        client.get_ticker('invalid_book')
     except QuadrigaError as exc:
         print(exc)
         print(exc.url)
@@ -33,7 +33,7 @@ Here is an example showing how an exception can be caught and handled:
 Exceptions
 ==========
 
-Below are all exceptions raised by the **quadriga** client.
+Below are exceptions raised by the **quadriga** client.
 
 .. automodule:: quadriga.exceptions
     :members:

@@ -7,37 +7,37 @@ Instructions
 ============
 
 Before submitting a pull request on GitHub_, please make sure you meet the
-**requirements**:
+following requirements:
 
 * The pull request points to the dev_ (development) branch.
-* All changes are squashed into a single commit (I like to use git rebase -i
-  to do this).
-* The commit message is in present tense (good: "Add feature", bad:
+* All changes are squashed into a single commit (I like to use
+  ``git rebase -i`` to do this).
+* The commit message is in present tense (ok: "Add feature", not ok:
   "Added feature").
 * Correct and consistent style: Sphinx_-compatible docstrings, using snake
-  vs. camel casing properly_ and PEP8_ compliance. Use flake8_ (see below).
+  vs. camel casing properly_ and PEP8_ compliance (see below).
 * No classes/methods/functions with missing docstrings or commented-out lines.
-  You can refer to existing docstrings for examples.
+  You can refer to existing ones for examples.
 * The test coverage_ remains at %100. Sometimes you may find yourself having to
   write superfluous unit tests to keep this number up. If a piece of code is
   trivial and has no need for unittests, use this_ to exclude it from coverage.
 * No build failures on TravisCI_. The builds automatically trigger on PR
   submissions.
 * Does not break backward-compatibility (unless there is a really good reason).
-* Compatibility with all supported Python versions (2.7, 3.4, 3.5, 3.6).
+* Compatible with Python versions 2.7, 3.4, 3.5 and 3.6.
 
 .. warning::
     The dev branch is occasionally rebased_, and its commit history may be
     overwritten in the process (I try very hard never to do this). So before
-    you begin feature work, git fetch/pull to ensure that branches have not
-    diverged. If you see git conflicts and just want to start from scratch,
+    you begin your feature work, git fetch/pull to ensure that branches have
+    not diverged. If you see git conflicts and just want to start from scratch,
     run this command:
 
     .. code-block:: bash
 
         ~$ git checkout dev
         ~$ git fetch origin
-        ~$ git reset --hard origin/dev  # THIS WILL WIPE ALL CHANGES
+        ~$ git reset --hard origin/dev  # THIS WILL WIPE AL LOCAL CHANGES
 
 Style
 =====
@@ -52,14 +52,14 @@ To ensure PEP8_ compliance, run flake8_:
     ~$ flake8
 
 You should try to resolve all issues reported. If there is a good reason to
-ignore errors from a specific piece of code, however, visit here_ to see how
-to exclude the lines from the check.
+ignore errors from a specific piece of code, visit here_ to see how to exclude
+the lines from the check.
 
 Testing
 =======
 
 To test your changes, run the unit tests that come with **quadriga** on your
-local machine. The tests use pytest_.
+local machine. The tests are written using pytest_.
 
 To run the unit tests:
 
